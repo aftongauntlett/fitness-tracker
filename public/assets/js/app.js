@@ -85,7 +85,17 @@ $(document).ready(function(){
       url: "/api/exercise"
     }).then( resp => {
       console.log(resp)
+
       // populate the select area
+
+      // [
+      //   { name :xxxx },
+      //   { name: xxxx }
+      // ]
+      
+
+
+
       resp.forEach( exercise => {
         const opt = $("<option>");
         opt.val(exercise.name);
