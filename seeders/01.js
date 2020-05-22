@@ -13,8 +13,16 @@ module.exports = {
       }], {});
     */
 
+    // Add 2 more tables, Workouts and Activities
+    // Activity = Duration, Weight, Sets, Reps and Distance
+    // no handlebars - make api call to jquery
+
     return queryInterface.bulkInsert('Exercises', [
-      { exercise_name: 'Barbell Curl', exercise_type: 'Bell Dumbs', createdAt: new Date(), updatedAt: new Date() },
+      { exercise_name: 'Barbell Curl', exercise_type: 'Weight Training', createdAt: new Date(), updatedAt: new Date() },
+      { exercise_name: 'Lateral Curl', exercise_type: 'Weight Training', createdAt: new Date(), updatedAt: new Date() },
+      { exercise_name: 'Bench Press', exercise_type: 'Weight Training', createdAt: new Date(), updatedAt: new Date() },
+      { exercise_name: 'Treadmill', exercise_type: 'Cardio', createdAt: new Date(), updatedAt: new Date() },
+      { exercise_name: 'Stairmaster', exercise_type: 'Cardio', createdAt: new Date(), updatedAt: new Date() },
 
     ], {})
   },
