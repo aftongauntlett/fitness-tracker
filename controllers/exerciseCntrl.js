@@ -5,12 +5,14 @@ const db = require("../models")
 const ExerciseCntrl = {
   // This is called (when needed) from the route page when a 
   // listing of all exercises is needed
-  getAll(req, res){
+  getAll(req, res, next) {
 
     // -- YOU WILL UPDATE WHAT THE "RESPONSE OBJECT" RETURNS -- //
 
-    db.Exercise.findAll({}).then(function (results) {
-      res.json(results);
+    return new Promise(function (resolve, reject) {
+      db.Exercise.findAll({}).then(function (results) {
+        res.json(results);
+      })
     })
 
     // return res.json({ searching: "Finding Exercises ..."})

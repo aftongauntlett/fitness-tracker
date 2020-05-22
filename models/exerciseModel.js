@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
 // module.exports = function (sequelize, DataTypes) {
 //   // -- DEFINE SEQUELIZE MODEL -- //
 
-
+// as
 //   // -- DONT FORGET TO RETURN YOUR MODEL (NEW OBJECT) -- //
 //   return // (???);
 // };
