@@ -4,7 +4,7 @@ $(document).ready(function () {
   // create and save a new activity
   // get a list of all exercises
   // get a list of all workouts and the activitiesfor each
-  
+
 
   // We're going to store some data here because we want to reference this
   // stuff multiple times, and this way we don't need to keep doing API calls
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
   // make api call to get activities for a specifc workout ID
   function populateActivities() {
-
+    getExercises
 
   }
 
@@ -105,8 +105,8 @@ $(document).ready(function () {
 
       resp.forEach(exercise => {
         const opt = $("<option>");
-        opt.val(exercise.name);
-        opt.text(exercise.name);
+        opt.val(exercise.exercise_name);
+        opt.text(exercise.exercise_name);
         $("select#exercise").append(opt);
       });
 

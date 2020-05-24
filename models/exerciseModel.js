@@ -17,17 +17,14 @@ module.exports = function (sequelize, DataTypes) {
         len: [1],
       },
     }
+
   });
+  Exercise.associate = function (models) {
+    Exercise.belongsTo(models.Activity, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  }
   return Exercise;
 };
-
-
-
-// // -- DO WE WANT TO GIVE THEM AN EXAMPLE OR CREATE IT FROM SCRATCH ?? -- //
-// module.exports = function (sequelize, DataTypes) {
-//   // -- DEFINE SEQUELIZE MODEL -- //
-
-// as
-//   // -- DONT FORGET TO RETURN YOUR MODEL (NEW OBJECT) -- //
-//   return // (???);
-// };

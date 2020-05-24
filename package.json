@@ -8,7 +8,8 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "npx sequelize db:seed:all",
-    "unseed": "npx sequelize db:seed:undo --seed '20200521125526-users'"
+    "unseed": "npx sequelize db:seed:undo --seed '20200521125526-users'",
+    "deploy": "npx sequelize db:drop && npx sequelize db:create && node sync.js && npm run seed && node server.js"
   },
   "author": "",
   "license": "MIT",
