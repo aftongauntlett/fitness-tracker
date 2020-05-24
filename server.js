@@ -1,6 +1,7 @@
 // -- BRING IN OUR PROJECT REQUIREMENTS -- //
 const express = require("express")
 const app = express();
+var exphbs = require('express-handlebars');
 // const path = require("path")
 
 // -- Requiring our models for syncing -- //
@@ -33,7 +34,12 @@ app.use(express.static("public"));
 
 // --> STUDENTS: DEFINE ROUTES TO HANDLE WORKOUT AND EXERCISE API CALLS -- //
 
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
+app.get('/', function (req, res) {
+  res.render('index');
+});
 
 
 // ================================== // 
