@@ -46,6 +46,11 @@ app.get('/', function (req, res) {
   })
 });
 
+app.get("/workouts/:id", function (req, res) {
+  db.Workout.findAll({ where: { id: req.params.id } }).then(result => {
+    res.render("workout", { workout: result[0] })
+  })
+})
 
 
 
