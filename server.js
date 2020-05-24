@@ -34,12 +34,19 @@ app.use(express.static("public"));
 
 // --> STUDENTS: DEFINE ROUTES TO HANDLE WORKOUT AND EXERCISE API CALLS -- //
 
+
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.get('/', function (req, res) {
-  res.render('index');
+  db.Workout.findAll({}).then(results => {
+    // console.log(results)
+    res.render('index', { workouts: results });
+  })
 });
+
+
 
 
 // ================================== // 

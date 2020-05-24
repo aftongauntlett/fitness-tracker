@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 const ExerciseCntrl = require('../controllers/exerciseCntrl');
+const WorkoutController = require("../controllers/workoutController");
 
 // -- USE MVC ARCHITECTURE --> HAVE CLEAN ROUTES AND MOVE THE LOGIC TO THE /CONTROLLERS DIRECTORY -- //
 
@@ -12,6 +13,10 @@ const ExerciseCntrl = require('../controllers/exerciseCntrl');
 // router.get("/", ExerciseCntrl.getAll);
 router.get("/exercise", function (req, res, next) {
     return ExerciseCntrl.getAll(req, res, next);
+})
+
+router.post("/workout", function (req, res) {
+    return WorkoutController.new(req, res);
 })
 
 // -- ADD ADDITIONAL ROUTES -- //

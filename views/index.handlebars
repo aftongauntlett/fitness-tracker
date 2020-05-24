@@ -1,1 +1,21 @@
-Here
+<div class="card">
+    <div class="card-body">
+        <div class="card-header">
+            List of Existing Workouts
+        </div>
+        <ul>
+            {{#each workouts}}
+            <li><a href="/workouts/{{this.dataValues.id}}">Name: {{this.dataValues.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
+
+<form action="/api/workout" method="POST">
+    <label for="workout-name">Today's Workout Name</label>
+    <div>
+        <textarea name="name" id="workout-name" rows="4" cols="50"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Create New Workout</button>
+</form>
